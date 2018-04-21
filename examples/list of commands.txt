@@ -1,0 +1,2 @@
+hi - Greetings
+mhs - Display all Mhs, or spesific Mhs if name parameter is exists

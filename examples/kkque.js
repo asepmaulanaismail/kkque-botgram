@@ -7,31 +7,38 @@ var bot = botgram(process.argv[2]);
 const get = require('simple-get')
 var url = "https://script.google.com/macros/s/AKfycbw-GBAvvLoquYfg_rwYa_OwNB6KP27Py14G0uFfWWB-2cYtt9iT/exec?id=1lk4oaTTfoI6QnayBSRiPtJYbAHxBENor3vrcndStsVY&sheet=sheet1"
 
-bot.command("start", "help", function(msg, reply, next) {
+bot.command("start", function(msg, reply, next) {
     reply.text("KKQue Foreva!");
 });
 
+bot.command("hi", function(msg, reply, next) {
+    reply.text("Hi juga :)");
+});
+
 bot.command("mhs", function(msg, reply, next) {
-    reply.text("Getting data...")
+    reply.text("Tunggu bentar yah...")
     var param = msg.args.raw
     get.concat(url, function(err, res, buffer) {
         if (err) throw err
         var response = JSON.parse(buffer.toString());
-        var strResult = "Result:";
+        var strResult = "";
         if (response.data.length > 0) {
             var counter = 0;
+            var temp = "";
             for (var i in response.data) {
                 obj = response.data[i];
-                if (param == "" || obj.Nama_.toLowerCase().indexOf(param.toLowerCase()) > -1) {
-                    strResult += "\n- " + obj.NPM + ": " + obj.Nama_ + " (" + obj.Phone + ")";
+                if (param == "" || obj.Nama_.toLowerCase().indexOf(param.toLowerCase()) > -1 || obj.nama_lengkap.toLowerCase().indexOf(param.toLowerCase()) > -1) {
+                    temp += "\n- " + obj.NPM + ": " + obj.Nama_ + " (" + obj.Phone + ")";
                     counter++;
                 }
             }
 
             if (counter == 0)
-                strResult += "\nNo data contains word <i>'" + param + "'</i>"
+                strResult = "Aku udah nyari, tapi gak nemu data yang ada kata  <i>'" + param + "'</i>-nya.\nMaaf ya :(";
+            else
+                strResult += "Alhamdulillah aku udah nyari, ini hasilnya:" + temp;
         } else {
-            strResult = "\nNo data found.";
+            strResult = "Aku udah nyari, tapi gak nemu datanya\nMaaf ya :(";
         }
         reply.html(strResult)
     })
