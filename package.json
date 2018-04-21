@@ -11,7 +11,8 @@
   "dependencies": {
     "escape-html": "1",
     "form-data": ">= 1.0.0-rc3",
-    "minimatch": "3"
+    "minimatch": "3",
+    "simple-get": "^2.7.0"
   },
   "devDependencies": {
     "eslint": "^4.4.1"
