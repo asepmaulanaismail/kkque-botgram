@@ -1,13 +1,14 @@
 import requests
 import time
 import datetime
+import sys
 
 # @xlvlayana_bot token
-bot_token = "344704476:AAEbTjJbpyhALbK3JI28JZSj1c8fdKPhemw"
+bot_token = sys.argv[1]
 url = "https://api.telegram.org/bot" + bot_token + "/sendMessage"
-chat_id = "-309555877" # marbel
+chat_id = sys.argv[2] # marbel
 
-debug = False
+debug = True
 counter = 1
 while(True):
     if debug == True:
