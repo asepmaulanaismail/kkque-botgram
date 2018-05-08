@@ -8,7 +8,7 @@ bot_token = sys.argv[1]
 url = "https://api.telegram.org/bot" + bot_token + "/sendMessage"
 chat_id = sys.argv[2] # marbel
 
-debug = True
+debug = False
 counter = 1
 while(True):
     if debug == True:
