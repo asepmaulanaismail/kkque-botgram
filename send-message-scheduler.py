@@ -34,4 +34,4 @@ while(True):
     if pesan != "":
         r = requests.post(url, data={'chat_id': chat_id, 'text': pesan, 'parse_mode': "Markdown"})
 
-    time.sleep(1)
+    time.sleep(60)
