@@ -37,9 +37,9 @@ while(True):
     elif now.hour+gmt == 15 and now.minute == 0:
         pesan = "Jangan lupa *Sholat Ashar* yaa" + ", " + strSecondaryChat[randint(0,6)]
     elif now.hour+gmt == 18 and now.minute == 0:
-        pesan = "*Selamat Berbuka* & Jangan lupa *Sholat Magrib* yaa" + ", " + strSecondaryChat[randint(0,6)]
+        pesan = "Selamat Menunaikan Ibadah Solat Magrib *Kesayangan* :heart_eyes: " + ", " + strSecondaryChat[randint(0,6)]
     elif now.hour+gmt == 19 and now.minute == 0:
-        pesan = "Jangan lupa *Sholat Isya* yaa *Trawehanya* juga loo" + ", " + strSecondaryChat[randint(0,6)]
+        pesan = "Jangan lupa *Sholat Isya* yaa :heart: " + ", " + strSecondaryChat[randint(0,6)]
 
     print("now: " + str(now.hour) + ":" + str(now.minute))
     
