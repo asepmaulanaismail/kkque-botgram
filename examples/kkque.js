@@ -7,12 +7,15 @@ var bot = botgram(process.argv[2]);
 const get = require('simple-get')
 var url = "https://script.google.com/macros/s/AKfycbw-GBAvvLoquYfg_rwYa_OwNB6KP27Py14G0uFfWWB-2cYtt9iT/exec?id=1lk4oaTTfoI6QnayBSRiPtJYbAHxBENor3vrcndStsVY&sheet=sheet1"
 
+var TYPE = "zp.0a";
+
 bot.command("start", function(msg, reply, next) {
     reply.text("KKQue Foreva!");
 });
 
 bot.command("hi", function(msg, reply, next) {
-    reply.text("Hi juga :)");
+    reply.text("Hi juga @" + msg.chat.username + " :)");
+    reply.sticker("CAADBQAD4AEAAjU9DQbFi81fxDPn5AI");
 });
 
 bot.command("mhs", function(msg, reply, next) {
@@ -43,3 +46,13 @@ bot.command("mhs", function(msg, reply, next) {
         reply.html(strResult)
     })
 });
+
+// bot.message(function (msg, reply, next) {
+//     reply.text("You said:");
+//     try {
+//     //   reply.message(msg);
+//       reply.text(msg.type + " " + msg.file.id);
+//     } catch (err) {
+//       reply.text("Couldn't resend that.");
+//     }
+//   });
